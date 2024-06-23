@@ -1,0 +1,15 @@
+package com.honeybadger.ecommerce.kafka;
+
+import com.honeybadger.ecommerce.customer.CustomerResponse;
+import com.honeybadger.ecommerce.order.PaymentMethod;
+import com.honeybadger.ecommerce.product.PurchaseResponse;
+
+import java.math.BigDecimal;
+import java.util.List;
+
+public record OrderConfirmation(
+    String orderReference,
+    BigDecimal totalAmount,
+    PaymentMethod paymentMethod,
+    CustomerResponse customer,
+    List<PurchaseResponse> products) {}
